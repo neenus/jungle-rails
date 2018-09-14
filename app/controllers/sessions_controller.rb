@@ -11,14 +11,9 @@ class SessionsController < ApplicationController
       # the user logged in when they navigate around the app
       session[:user_id] = user.id
       redirect_to '/'
-    begin
-      # if user's login doesn't work, send them back to login form
-      redirect_to new_session_path
-    rescue => exception
-      
     else
-      
-    end
+      # if user's login doesn't work, send them back to login form
+      redirect_to '/login'
     end
   end
 
